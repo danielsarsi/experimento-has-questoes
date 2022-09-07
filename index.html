@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .questoes {
+        display: flex;
+        flex-direction: column;
+        width: 16rem;
+        margin-block: 5rem;
+      }
+
+      .questao {
+        padding-block: 1rem;
+        opacity: 0.2;
+        display: flex;
+        flex-direction: column;
+        gap: .5rem;
+        transition: transform .5s ease, opacity .1s ease;
+      }
+      
+      #questoes-focadas .questao:focus-within,
+      #questoes-focadas .questao:active,
+      #questoes-focadas .questao:hover,
+      #questoes-focadas .questao:nth-of-type(1):not(:has(~ :focus-within), :has(~ :active)) {
+        opacity: 1;
+      }
+
+      #questoes-integradas .questao:active,
+      #questoes-integradas .questao:hover,
+      #questoes-integradas .questao:nth-of-type(1),
+      #questoes-integradas .questao:has(*:focus),
+      #questoes-integradas .questao:has(~:focus-within),
+      #questoes-integradas .questao:has(~:active) {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="questoes-focadas" class="questoes">
+      <h1>focadíssimo</h1>
+      <section class="questao">
+        <label for="questao-focada-1">Uma livre questão</label>
+        <input id="questao-focada-1" type="text"/>
+      </section>
+      <section class="questao">
+        Dois objetivos definidos
+        <label>
+          <input type="checkbox"/>
+          Parar
+        </label>
+        <label>
+          <input type="checkbox"/>
+          Correr
+        </label>
+        <label>
+          <input type="checkbox"/>
+          Andar
+        </label>
+      </section>
+      <section class="questao">
+        Uma carga única (compartilhada)
+        <label>
+          <input type="radio" name="local" />
+          Mal-estar
+        </label>
+        <label>
+          <input type="radio" name="local" />
+          Sofrimento
+        </label>
+        <label>
+          <input type="radio" name="local" />
+          Angústia
+        </label>
+      </section>
+    </section>
+    <section id="questoes-integradas">
+      <h1>integradíssimo</h1>
+      <section class="questao">
+        <label for="questao-integrada-1">Uma livre questão</label>
+        <input id="questao-integrada-1" type="text"/>
+      </section>
+      <section class="questao">
+        Dois objetivos definidos
+        <label>
+          <input type="checkbox"/>
+          Parar
+        </label>
+        <label>
+          <input type="checkbox"/>
+          Correr
+        </label>
+        <label>
+          <input type="checkbox"/>
+          Andar
+        </label>
+      </section>
+      <section class="questao">
+        Uma carga única (compartilhada)
+        <label>
+          <input type="radio" name="local" />
+          Mal-estar
+        </label>
+        <label>
+          <input type="radio" name="local" />
+          Sofrimento
+        </label>
+        <label>
+          <input type="radio" name="local" />
+          Angústia
+        </label>
+      </section>
+    </section>
+  </body>
+</html>
